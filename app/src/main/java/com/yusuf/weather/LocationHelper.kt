@@ -30,8 +30,6 @@ class LocationHelper(private val activity: Activity, private val savedInstanceSt
 
     private val REQUEST_PERMISSIONS_REQUEST_CODE = 34
 
-    private val ADDRESS_REQUESTED_KEY = "address-request-pending"
-    private val LOCATION_ADDRESS_KEY = "location-address"
 
     private val LAT_KEY = "LAT_KEY"
     private val LNG_KEY = "LNG_KEY"
@@ -76,19 +74,6 @@ class LocationHelper(private val activity: Activity, private val savedInstanceSt
     private fun updateValuesFromBundle(savedInstanceState: Bundle?) {
         savedInstanceState ?: return
 
-        ADDRESS_REQUESTED_KEY.let {
-
-            if (savedInstanceState.keySet().contains(it)) {
-                addressRequested = savedInstanceState.getBoolean(it)
-            }
-        }
-
-        LOCATION_ADDRESS_KEY.let {
-            if (savedInstanceState.keySet().contains(it)) {
-                addressOutput = savedInstanceState.getString(it).orEmpty()
-                displayAddressOutput()
-            }
-        }
 
         LAT_KEY.let {
             if (savedInstanceState.keySet().contains(it)) {
@@ -172,11 +157,7 @@ class LocationHelper(private val activity: Activity, private val savedInstanceSt
         savedInstanceState
 
         with(savedInstanceState) {
-            // Save whether the address has been requested.
-            putBoolean(ADDRESS_REQUESTED_KEY, addressRequested)
 
-            // Save the address string.
-            putString(LOCATION_ADDRESS_KEY, addressOutput)
 
             putString(LAT_KEY, cityOutput)
 
