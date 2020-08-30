@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Weather</string>
+
+
+    <string-array name="colors">
+        <item>#c8d5b9</item>
+        <item>#c8d5b9</item>
+        <item>#43658b</item>
+        <item>#4e89ae</item>
+        <item>#68b0ab</item>
+        <item>#8fc0a9</item>
+    </string-array>
+</resources>

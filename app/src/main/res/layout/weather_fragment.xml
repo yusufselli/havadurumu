@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    android:id="@+id/container"
+    android:overScrollMode="never"
+    android:theme="@style/MyTheme"
+    tools:context=".ui.weather.WeatherFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include layout="@layout/list_weather_day" />
+
+
+      <FrameLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <ListView
+            android:scrollbars="none"
+
+              android:id="@+id/listView"
+              android:layout_width="match_parent"
+              android:layout_height="258dp"
+              android:nestedScrollingEnabled="true"
+              tools:listitem="@layout/list_weather" />
+      </FrameLayout>
+
+        <include layout="@layout/list_weather_day_detail" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
